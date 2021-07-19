@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single" >
         <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Home" />
+        <item
             android:id="@+id/gestion_users"
             android:icon="@drawable/ic_user"
             android:title="Gestion des profiles" />
@@ -25,7 +29,7 @@
             <group android:checkableBehavior="single">
 
                 <item
-                    android:id="@+id/nav_login"
+                    android:id="@+id/nav_logout"
                     android:icon="@drawable/ic_logout"
                     android:title="Se deconnecter" />
             </group>
