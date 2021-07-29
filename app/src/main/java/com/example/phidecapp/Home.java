@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    DrawerLayout drawerLayout;
+    protected DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
     Menu menu;
@@ -63,7 +63,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.home);
+        //navigationView.setCheckedItem(R.id.home);
 
     }
     @Override
@@ -91,7 +91,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 intent = new Intent(Home.this, ThirdActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_logout: Toast.makeText(this, "Déconnecter", Toast.LENGTH_SHORT).show(); break;
+            case R.id.nav_logout :  SharedPrefManager.getInstance(getApplicationContext()).logout();
+            Toast.makeText(this, "Déconnecter", Toast.LENGTH_SHORT).show();
+             intent = new Intent(Home.this,Login.class);
+            startActivity(intent);
+            finish();break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
