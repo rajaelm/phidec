@@ -1,24 +1,20 @@
 package com.example.phidecapp;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Signup extends AppCompatActivity {
-    EditText editTextUsername, editTextEmail, editTextPassword,getEditTextRc;
+    EditText editTextUsername, editTextEmail, editTextPassword,getEditTextRs;
 
 
 
@@ -47,7 +43,7 @@ public class Signup extends AppCompatActivity {
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
-        getEditTextRc = findViewById(R.id.editTextRc);
+        getEditTextRs = findViewById(R.id.editTextRs);
 
 
         findViewById(R.id.buttonRegister).setOnClickListener(new View.OnClickListener() {
@@ -74,7 +70,7 @@ public class Signup extends AppCompatActivity {
         final String username = editTextUsername.getText().toString().trim();
         final String email = editTextEmail.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
-        final String rc = getEditTextRc.getText().toString().trim();
+        final String rs = getEditTextRs.getText().toString().trim();
 
 
         //first we will do the validations
@@ -101,8 +97,8 @@ public class Signup extends AppCompatActivity {
             editTextPassword.requestFocus();
             return;
         }
-        if (TextUtils.isEmpty(rc)) {
-            editTextPassword.setError("Enter le Rc");
+        if (TextUtils.isEmpty(rs)) {
+            editTextPassword.setError("Enter le Rs");
             editTextPassword.requestFocus();
             return;
         }
@@ -128,7 +124,7 @@ public class Signup extends AppCompatActivity {
                                         userJson.getInt("id"),
                                         userJson.getString("username"),
                                         userJson.getString("email"),
-                                        userJson.getString("rc")
+                                        userJson.getString("rs")
                                 );
 
                                 //storing the user in shared preferences
@@ -157,7 +153,7 @@ public class Signup extends AppCompatActivity {
                 params.put("username", username);
                 params.put("email", email);
                 params.put("password", password);
-                params.put("rc", rc);
+                params.put("rs",rs);
                 return params;
             }
         };
