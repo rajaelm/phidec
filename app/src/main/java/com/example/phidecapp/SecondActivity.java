@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,6 +34,27 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        /*****Search*********/
+        EditText search = findViewById(R.id.edittextsearch);
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+
+
+        /*****************************************/
         rv=(RecyclerView)findViewById(R.id.recyclerview);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
@@ -73,5 +97,17 @@ public class SecondActivity extends AppCompatActivity {
         });
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+    ///////////////////*****Search***************///////////////
+    private void filter(String text) {
+        ArrayList<List_data> filteredList = new ArrayList<>();
+
+        for (List_data client : list_data) {
+            if (client.getNom().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(client);
+            }
+        }
+
+        adapter.filterList(filteredList);
     }
 }
