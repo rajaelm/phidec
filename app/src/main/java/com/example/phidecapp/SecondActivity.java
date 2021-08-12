@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
@@ -26,13 +28,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity  extends Home {
     private List<List_data> list_data;
     private RecyclerView rv;
     private MyAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_second);
         /*****Search*********/
         EditText search = findViewById(R.id.edittextsearch);
@@ -62,14 +65,8 @@ public class SecondActivity extends AppCompatActivity {
         adapter=new MyAdapter(list_data);
 
         getClientData();
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        FloatingActionButton button = findViewById(R.id.button);
+        button.setOnClickListener(v -> openDialog());
     }
     private void getClientData() {
         StringRequest stringRequest=new StringRequest(Request.Method.GET, URLs.URL_Client, new Response.Listener<String>() {
@@ -109,5 +106,8 @@ public class SecondActivity extends AppCompatActivity {
         }
 
         adapter.filterList(filteredList);
+    }
+    private void openDialog() {
+        Add_user.display(getSupportFragmentManager());
     }
 }

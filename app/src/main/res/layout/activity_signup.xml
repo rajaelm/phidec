@@ -144,7 +144,7 @@
 
 
     <EditText
-        android:id="@+id/editTextRs"
+        android:id="@+id/Etrs"
         android:layout_width="366dp"
         android:layout_height="46dp"
         android:layout_marginTop="13dp"
@@ -171,7 +171,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textViewLogin"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRs" />
+        app:layout_constraintTop_toBottomOf="@+id/Etrs" />
 
     <TextView
         android:id="@+id/textViewLogin"
@@ -187,7 +187,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRs"
+        app:layout_constraintTop_toBottomOf="@+id/Etrs"
         app:layout_constraintVertical_bias="0.0" />
 
 

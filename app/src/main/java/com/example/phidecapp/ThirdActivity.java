@@ -3,6 +3,7 @@ package com.example.phidecapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,19 @@ User user;
         View contentView = inflater.inflate(R.layout.activity_home, null, false);
         View contentView2 = inflater.inflate(R.layout.activity_third, null, false);
         drawerLayout.addView(contentView, 0);
-        //user= user = SharedPrefManager.getInstance(getActivity()).getUser();
+
+
+    }
+    public void getDataFromPrefernces()
+    {
+        SharedPreferences prefefnces = getApplicationContext().getSharedPreferences("header",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefefnces.edit();
+        String username = prefefnces.getString("username","");
+        String email = prefefnces.getString("email","");
+
+
+        editor.commit();
+
+
     }
 }

@@ -43,7 +43,7 @@ public class Signup extends AppCompatActivity {
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
-        getEditTextRs = findViewById(R.id.editTextRs);
+        getEditTextRs = findViewById(R.id.Etrs);
 
 
         findViewById(R.id.buttonRegister).setOnClickListener(new View.OnClickListener() {
