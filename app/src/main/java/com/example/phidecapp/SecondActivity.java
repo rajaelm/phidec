@@ -1,14 +1,13 @@
 package com.example.phidecapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
@@ -19,7 +18,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,6 +30,7 @@ public class SecondActivity  extends Home {
     private List<List_data> list_data;
     private RecyclerView rv;
     private MyAdapter adapter;
+    private static Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +55,28 @@ public class SecondActivity  extends Home {
             }
         });
 
-
         /*****************************************/
         rv=(RecyclerView)findViewById(R.id.recyclerview);
+        rv.addOnItemTouchListener(
+                new RecyclerItemClickListener(context, rv ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(SecondActivity.this,
+                                FirstActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         list_data=new ArrayList<>();
         adapter=new MyAdapter(list_data);
 
         getClientData();
-        FloatingActionButton button = findViewById(R.id.button);
+        FloatingActionButton button = findViewById(R.id.activeButton);
         button.setOnClickListener(v -> openDialog());
     }
     private void getClientData() {

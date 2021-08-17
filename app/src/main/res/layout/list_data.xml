@@ -154,7 +154,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/activeButton"
                         android:layout_width="110dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="40dp"
@@ -166,7 +166,7 @@
                         android:textColor="@color/white" />
 
                     <Button
-                        android:id="@+id/button1"
+                        android:id="@+id/disactiveButton"
                         android:layout_width="110dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="70dp"

@@ -7,14 +7,19 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -25,27 +30,37 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     Menu menu;
     TextView textView;
     ImageView imageView;
+    private User user;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        /********************Link to profile********************
-        imageView =(ImageView) findViewById(R.id.imageView);
+        SharedPrefManager sharedpreferences = SharedPrefManager.getInstance(this);
+        user=sharedpreferences.getUser();
+        ///** Set header info****////
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        View header = navigationView.getHeaderView(0);
+        TextView username = (TextView) header.findViewById(R.id.username);
+        username.setText(user.getName());
+        TextView email = (TextView) header.findViewById(R.id.email);
+        email.setText(user.getEmail());
+
+        /********************Link to profile********************/
+        imageView =(ImageView)header.findViewById(R.id.imageView);
         imageView.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 
-                /*
-                 * Intent is just like glue which helps to navigate one activity
-                 * to another.
 
-                Intent intent1 = new Intent(Home.this,
-                        ThirdActivity.class);
-                startActivity(intent1); // startActivity allow you to move
+                Intent intent = new Intent(Home.this,
+                        Profile.class);
+                startActivity(intent); // startActivity allow you to move
             }
-        });*/
+        });
         /*---------------------Hooks------------------------*/
         drawerLayout=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.nav_view);
@@ -100,6 +115,17 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
 
+    }
+    public static void setDefaults(String key, String value, Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(key, value);
+        editor.commit();
+    }
+
+    public static String getDefaults(String key, Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getString(key, null);
     }
 
 }

@@ -29,7 +29,7 @@ public class SharedPrefManager  {
         editor.putInt(KEY_ID, user.getId());
         editor.putString(KEY_USERNAME, user.getName());
         editor.putString(KEY_EMAIL, user.getEmail());
-        editor.putString(KEY_RC, user.getRC());
+        editor.putString(KEY_RC, user.getRS());
         editor.apply();
     }
 
@@ -58,4 +58,5 @@ public class SharedPrefManager  {
         editor.apply();
         ctx.startActivity(new Intent(ctx, Home.class));
     }
+
 }

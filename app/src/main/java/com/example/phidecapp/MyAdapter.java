@@ -3,6 +3,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -48,11 +49,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView txtname,txtemail,txtrs;
+        private Button buttonA;
         public ViewHolder(View itemView) {
             super(itemView);
             txtname=(TextView)itemView.findViewById(R.id.txt_name);
             txtemail=(TextView)itemView.findViewById(R.id.txt_email);
             txtrs=(TextView)itemView.findViewById(R.id.txt_rs);
+            buttonA= (Button) itemView.findViewById(R.id.activeButton);
         }
     }
 }
