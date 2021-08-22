@@ -98,30 +98,31 @@
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />
         <EditText
-            android:id="@+id/ville"
+            android:id="@+id/Etusername"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+
+            android:background="@drawable/search_box"
+            android:ems="10"
+
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"/>
+        <EditText
+            android:id="@+id/telephone"
             android:layout_width="366dp"
             android:layout_height="46dp"
 
             android:layout_marginTop="5dp"
             android:background="@drawable/search_box"
             android:ems="10"
-            android:hint="Ville"
+
             android:inputType="textEmailAddress"
             android:paddingLeft="20dp"
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />
 
-        <EditText
-            android:id="@+id/Etrs"
-            android:layout_width="366dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="5dp"
 
-            android:background="@drawable/search_box"
-            android:ems="10"
-            android:hint="Raison Sociale"
-            android:inputType="textPersonName"
-            android:paddingLeft="20dp"/>
     </LinearLayout>
 
     <LinearLayout

@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Signup extends AppCompatActivity {
-    EditText editTextUsername, editTextEmail, editTextPassword,getEditTextRs;
+    EditText editTextUsername, editTextEmail, editTextPassword,getEditTextTelephone,editTextname ;
 
 
 
@@ -40,10 +40,11 @@ public class Signup extends AppCompatActivity {
             return;
         }
 
-        editTextUsername = findViewById(R.id.editTextUsername);
+        editTextUsername = findViewById(R.id.editTextusername);
+        editTextname = findViewById(R.id.editTextname);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
-        getEditTextRs = findViewById(R.id.Etrs);
+        getEditTextTelephone= findViewById(R.id.telephone);
 
 
         findViewById(R.id.buttonRegister).setOnClickListener(new View.OnClickListener() {
@@ -67,38 +68,44 @@ public class Signup extends AppCompatActivity {
     }
 
     private void registerUser() {
+        final String name = editTextname.getText().toString().trim();
         final String username = editTextUsername.getText().toString().trim();
         final String email = editTextEmail.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
-        final String rs = getEditTextRs.getText().toString().trim();
+        final String tel = getEditTextTelephone.getText().toString().trim();
 
 
         //first we will do the validations
+        if (TextUtils.isEmpty(name)) {
+            editTextUsername.setError("Veuillez saisir votre nom");
+            editTextUsername.requestFocus();
+            return;
+        }
         if (TextUtils.isEmpty(username)) {
-            editTextUsername.setError("Please enter username");
+            editTextUsername.setError("Veuillez saisir votre username");
             editTextUsername.requestFocus();
             return;
         }
 
         if (TextUtils.isEmpty(email)) {
-            editTextEmail.setError("Please enter your email");
+            editTextEmail.setError("Veuillez saisir votre email");
             editTextEmail.requestFocus();
             return;
         }
 
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail.setError("Enter a valid email");
+            editTextEmail.setError("Veuillez saisir un email valide");
             editTextEmail.requestFocus();
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            editTextPassword.setError("Enter le password");
+            editTextPassword.setError("Veuillez saisir votre password");
             editTextPassword.requestFocus();
             return;
         }
-        if (TextUtils.isEmpty(rs)) {
-            editTextPassword.setError("Enter le Rs");
+        if (TextUtils.isEmpty(tel)) {
+            editTextPassword.setError("Veuillez saisir votre numéro e téléphone");
             editTextPassword.requestFocus();
             return;
         }
@@ -122,9 +129,10 @@ public class Signup extends AppCompatActivity {
                                 //creating a new user object
                                 User user = new User(
                                         userJson.getInt("id"),
-                                        userJson.getString("username"),
+                                        userJson.getString("name"),
                                         userJson.getString("email"),
-                                        userJson.getString("rs")
+                                        userJson.getString("username"),
+                                        userJson.getString("phone")
                                 );
 
                                 //storing the user in shared preferences
@@ -150,10 +158,11 @@ public class Signup extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("username", username);
+                params.put("name", name);
                 params.put("email", email);
+                params.put("username", username);
                 params.put("password", password);
-                params.put("rs",rs);
+                params.put("phone",tel);
                 return params;
             }
         };

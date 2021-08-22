@@ -43,9 +43,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         NavigationView navigationView = findViewById(R.id.nav_view);
         View header = navigationView.getHeaderView(0);
         TextView username = (TextView) header.findViewById(R.id.username);
-        username.setText(user.getName());
+        username.setText("Nom : " +user.getName());
         TextView email = (TextView) header.findViewById(R.id.email);
-        email.setText(user.getEmail());
+        email.setText("Email : "+user.getEmail());
 
         /********************Link to profile********************/
         imageView =(ImageView)header.findViewById(R.id.imageView);

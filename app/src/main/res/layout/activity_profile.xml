@@ -56,11 +56,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             
-            android:text="Nom et Prénom :"
+            android:text="Nom :"
             android:textSize="15dp"
             android:textColor="@color/black"/>
         <TextView
             android:id="@+id/Etname"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:textSize="15dp"
+            android:ems="10"
+            android:gravity="fill_vertical"
+
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Username :"
+            android:textSize="15dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/Etusername"
             android:layout_width="366dp"
             android:layout_height="46dp"
             android:layout_marginLeft="10dp"
@@ -97,45 +117,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ville :"
+            android:text="Numéro de téléphone :"
             android:textSize="15dp"
             android:textColor="@color/black"/>
+
         <TextView
-            android:id="@+id/Etville"
+            android:id="@+id/EtTelephone"
             android:layout_width="366dp"
             android:layout_height="46dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:gravity="fill_vertical"
-            android:textSize="15dp"
             android:background="@drawable/search_box"
             android:ems="10"
+            android:gravity="fill_vertical"
+            android:inputType="phone"
 
-            android:inputType="textEmailAddress"
             android:paddingLeft="20dp"
+            android:textSize="15dp"
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Raison Sociale :"
-            android:textSize="15dp"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:id="@+id/Etrs"
-            android:layout_width="366dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/search_box"
-            android:textSize="15dp"
-            android:ems="10"
-            android:gravity="fill_vertical"
 
 
-            android:inputType="textPersonName"
-            android:paddingLeft="20dp"/>
     </LinearLayout>
 
     <LinearLayout

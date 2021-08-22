@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -25,8 +26,9 @@ import java.util.Map;
 
 public class EditProfile extends AppCompatActivity {
     private User user;
-    EditText etName,etEmail,ville,Etrs;
+    EditText etName,etEmail,Etusername,Ettelephoen;
     Button editprof;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,10 +39,13 @@ public class EditProfile extends AppCompatActivity {
         etName.setText(user.getName());
         etEmail = (EditText) findViewById(R.id.Etemail);
         etEmail.setText(user.getEmail());
-        ville = (EditText) findViewById(R.id.ville);
-        //ville.setText(user.getVille());Etrs
-        Etrs = (EditText) findViewById(R.id.Etrs);
-        Etrs.setText(user.getRS());
+
+        Etusername = (EditText) findViewById(R.id.Etusername);
+        Etusername.setText(user.getUsername());
+
+        Ettelephoen = (EditText) findViewById(R.id.telephone);
+        Ettelephoen.setText(user.getTelephone());
+
         editprof=(Button)findViewById(R.id.savemodifs);
         editprof.setOnClickListener(new View.OnClickListener() {
 
@@ -49,13 +54,27 @@ public class EditProfile extends AppCompatActivity {
                 SaveEditDetail();
             }
         });
+        back = (ImageButton) findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(EditProfile.this,
+                        Home.class);
+                startActivity(intent); // startActivity allow you to move
+            }
+        });
 
     }
     private void SaveEditDetail() {
 
         final String name = etName.getText().toString().trim();
         final String email = etEmail.getText().toString().trim();
-        final String rs = Etrs.getText().toString().trim();
+        final String username = Etusername.getText().toString().trim();
+        final String tel = Ettelephoen.getText().toString().trim();
         final String id = String.valueOf(user.getId());
 
 
@@ -99,9 +118,10 @@ public class EditProfile extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("id", id);
-                params.put("username", name);
+                params.put("name", name);
                 params.put("email", email);
-                params.put("rs", rs);
+                params.put("username", username);
+                params.put("telephone", tel);
                 return params;
             }
         };

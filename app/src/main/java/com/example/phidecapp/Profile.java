@@ -12,7 +12,7 @@ import android.widget.Toast;
 import android.preference.PreferenceManager;
 
 public class Profile extends AppCompatActivity {
-    private TextView etName, etEmail, etVille, etRs;
+    private TextView etName, etEmail,etUsername, ettelephone;
     private User user;
     ImageButton back;
     Button edit;
@@ -23,17 +23,21 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         SharedPrefManager sharedPrefManager = SharedPrefManager.getInstance(this);
         user = sharedPrefManager.getUser();
-        etName = (TextView) findViewById(R.id.Etname);
 
+        etName = (TextView) findViewById(R.id.Etname);
         etName.setText(user.getName());
+
         etEmail = (TextView) findViewById(R.id.Etemail);
         etEmail.setText(user.getEmail());
-        etVille = (TextView) findViewById(R.id.Etville);
-        //etVille.setText(user.getVille());
-        etRs = (TextView) findViewById(R.id.Etrs);
-        etRs.setText(user.getRS());
-        back = (ImageButton) findViewById(R.id.back);
+
+        etUsername = (TextView) findViewById(R.id.Etusername);
+        etUsername.setText(user.getUsername());
+
+        ettelephone = (TextView) findViewById(R.id.EtTelephone);
+        ettelephone.setText(user.getTelephone());
         edit= (Button)findViewById(R.id.Editprof);
+        back = (ImageButton) findViewById(R.id.back);
+
         back.setOnClickListener(new View.OnClickListener() {
 
             @Override

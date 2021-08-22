@@ -2,12 +2,13 @@ package com.example.phidecapp;
 
 public class User {
     private int id;
-    private String name, email, rs;
+    private String name, username, email, telephone;
 
-    public User(int id, String name, String email, String rs) {
+    public User(int id, String name, String username, String email, String telephone) {
         this.id = id;
         this.email = email;
-        this.rs = rs;
+        this.username=username;
+        this.telephone = telephone;
         this.name = name;
     }
 
@@ -34,14 +35,22 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-    public String getRS() {
-        return rs;
+    //set and get username
+    public String getUsername() {
+        return username;
     }
 
-    public void setRc(String rs) {
-        this.rs = rs;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
 
     }
 }

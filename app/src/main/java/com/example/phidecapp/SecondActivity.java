@@ -10,6 +10,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,6 +32,7 @@ public class SecondActivity  extends Home {
     private RecyclerView rv;
     private MyAdapter adapter;
     private static Context context;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +63,7 @@ public class SecondActivity  extends Home {
                 new RecyclerItemClickListener(context, rv ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         Intent intent = new Intent(SecondActivity.this,
-                                FirstActivity.class);
+                                FirstActivity.class).putExtra("position",position);
                         startActivity(intent);
                     }
 
@@ -78,6 +80,19 @@ public class SecondActivity  extends Home {
         getClientData();
         FloatingActionButton button = findViewById(R.id.activeButton);
         button.setOnClickListener(v -> openDialog());
+        back = (ImageButton) findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(SecondActivity.this,
+                        Home.class);
+                startActivity(intent); // startActivity allow you to move
+            }
+        });
     }
     private void getClientData() {
         StringRequest stringRequest=new StringRequest(Request.Method.GET, URLs.URL_Client, new Response.Listener<String>() {
@@ -88,7 +103,7 @@ public class SecondActivity  extends Home {
                     JSONArray array=jsonObject.getJSONArray("data");
                     for (int i=0; i<array.length(); i++ ){
                         JSONObject ob =array.getJSONObject(i);
-                        List_data listData=new List_data(ob.getString("nomc"),ob.getString("email"), ob.getString("rs"));
+                        List_data listData=new List_data(ob.getString("nom"),ob.getString("email"), ob.getString("rs"));
                         list_data.add(listData);
                     }
                     rv.setAdapter(adapter);
