@@ -22,7 +22,7 @@ public class Liste_controler extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         cardView = findViewById(R.id.base_cardview);
-        arrow = findViewById(R.id.arrow_button);
+        /*arrow = findViewById(R.id.arrow_button);
         hiddenView = findViewById(R.id.hidden_view);
 
         arrow.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +54,6 @@ public class Liste_controler extends AppCompatActivity {
                     arrow.setImageResource(R.drawable.ic_baseline_expand_less_24);
                 }
             }
-        });
+        });*/
     }
 }

@@ -63,7 +63,7 @@ public class EditProfile extends AppCompatActivity {
 
 
                 Intent intent = new Intent(EditProfile.this,
-                        Home.class);
+                        Profile.class);
                 startActivity(intent); // startActivity allow you to move
             }
         });

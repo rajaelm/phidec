@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -42,7 +43,7 @@ import java.util.Map;
  * status bar and navigation/system bar) with user interaction.
  */
 public class Add_user extends DialogFragment {
-    EditText etName, etemail, etrs;
+    EditText etName, etemail, etrs,etusername,etville,etphone,etcin,etpassword,etaddresse;
     Menu menu;
     Button submit;
     private Context mContext;
@@ -50,7 +51,7 @@ public class Add_user extends DialogFragment {
     RequestQueue requestQueue;
 
     // Create string variable to hold the EditText Value.
-    String Name,Email,Rs;
+    String Name,Email,Rs,Username,Cin,Ville,Addresse,Phone,password;
 
     // Creating Progress dialog.
     ProgressDialog progressDialog;
@@ -99,6 +100,14 @@ public class Add_user extends DialogFragment {
         etName = view.findViewById(R.id.Etname);
         etemail =view.findViewById(R.id.Etemail);
         etrs =view.findViewById(R.id.Etrs);
+        etusername=view.findViewById(R.id.Etusername);
+        etville=view.findViewById(R.id.ville);
+        etphone=view.findViewById(R.id.Etphone);
+        etpassword=view.findViewById(R.id.password);
+        etcin=view.findViewById(R.id.Etcin);
+        etaddresse=view.findViewById(R.id.Etaddresse);
+
+
         submit= view.findViewById(R.id.submit);
         // Creating Volley newRequestQueue .
         requestQueue = Volley.newRequestQueue(mContext);
@@ -109,7 +118,7 @@ public class Add_user extends DialogFragment {
             public void onClick(View view) {
 
                 // Showing progress dialog at user registration time.
-                progressDialog.setMessage("Veuillez patienter");
+                progressDialog.setMessage("Veuillez patienter...");
                 progressDialog.show();
 
                 // Calling method to get value from EditText.
@@ -126,6 +135,9 @@ public class Add_user extends DialogFragment {
 
                                 // Showing response message coming from server.
                                 Toast.makeText(mContext, ServerResponse, Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(getActivity(), SecondActivity.class);
+                                startActivity(intent);
+
                             }
                         },
                         new Response.ErrorListener() {
@@ -147,9 +159,14 @@ public class Add_user extends DialogFragment {
 
                         // Adding All values to Params.
                         params.put("name", Name);
-
                         params.put("email", Email);
+                        params.put("username", Username);
                         params.put("rs", Rs);
+                        params.put("password",password);
+                        params.put("ville", Ville);
+                        params.put("addresse", Addresse);
+                        params.put("cin", Cin);
+                        params.put("phone", Phone);
                         return params;
                     }
 
@@ -183,5 +200,11 @@ public class Add_user extends DialogFragment {
         Name = etName.getText().toString().trim();
         Email = etemail.getText().toString().trim();
         Rs = etrs.getText().toString().trim();
+        Username=etusername.getText().toString().trim();
+        password=etpassword.getText().toString().trim();
+        Ville=etville.getText().toString().trim();
+        Addresse=etaddresse.getText().toString().trim();
+        Cin=etcin.getText().toString().trim();
+        Phone= etphone.getText().toString().trim();
     }
 }

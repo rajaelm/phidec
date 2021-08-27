@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditClient" >
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/clientinfo"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+
+        android:foregroundGravity="center"
+        android:layout_height="640dp">
+        <LinearLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Nom :"
+            android:textSize="15dp"
+            android:textColor="@color/gray"/>
+        <EditText
+            android:id="@+id/Etname"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:ems="10"
+            android:gravity="fill_vertical"
+
+
+            android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Username :"
+            android:textSize="15dp"
+            android:textColor="@color/gray"/>
+        <EditText
+            android:id="@+id/Etusername"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:ems="10"
+            android:gravity="fill_vertical"
+            android:paddingLeft="20dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CIN :"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <EditText
+                android:id="@+id/EtCin"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Raison Sociale :"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+            <EditText
+                android:id="@+id/EtRs"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adresse :"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <EditText
+                android:id="@+id/EtAdress"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email :"
+            android:textSize="15dp"
+            android:textColor="@color/gray"/>
+
+        <EditText
+            android:id="@+id/Etemail"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:gravity="fill_vertical"
+
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numéro de téléphone :"
+            android:textSize="15dp"
+            android:textColor="@color/gray"/>
+
+        <EditText
+            android:id="@+id/EtTelephone"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:gravity="fill_vertical"
+            android:inputType="phone"
+            android:paddingLeft="20dp"
+            android:textSize="15dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ville :"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <EditText
+                android:id="@+id/EtVille"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
+
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+
+
+        </LinearLayout>
+</ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="0dp"
+        android:layout_below="@id/clientinfo"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/savemodifs"
+            android:layout_width="292dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="55dp"
+            android:background="@drawable/button"
+            android:onClick="btn_updateData"
+            android:text="Enregistrer"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

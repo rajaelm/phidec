@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SecondActivity  extends Home {
-    private List<List_data> list_data;
+    public static List<List_data> list_data;
     private RecyclerView rv;
     private MyAdapter adapter;
     private static Context context;
@@ -59,19 +59,7 @@ public class SecondActivity  extends Home {
 
         /*****************************************/
         rv=(RecyclerView)findViewById(R.id.recyclerview);
-        rv.addOnItemTouchListener(
-                new RecyclerItemClickListener(context, rv ,new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(SecondActivity.this,
-                                FirstActivity.class).putExtra("position",position);
-                        startActivity(intent);
-                    }
 
-                    @Override public void onLongItemClick(View view, int position) {
-                        // do whatever
-                    }
-                })
-        );
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         list_data=new ArrayList<>();
@@ -93,6 +81,20 @@ public class SecondActivity  extends Home {
                 startActivity(intent); // startActivity allow you to move
             }
         });
+        rv.addOnItemTouchListener(
+                new RecyclerItemClickListener(context, rv ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+
+                        Intent intent = new Intent(SecondActivity.this, ViewClient.class);
+                        intent.putExtra("position",position);
+                        startActivity(intent);
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
     }
     private void getClientData() {
         StringRequest stringRequest=new StringRequest(Request.Method.GET, URLs.URL_Client, new Response.Listener<String>() {
@@ -103,7 +105,7 @@ public class SecondActivity  extends Home {
                     JSONArray array=jsonObject.getJSONArray("data");
                     for (int i=0; i<array.length(); i++ ){
                         JSONObject ob =array.getJSONObject(i);
-                        List_data listData=new List_data(ob.getString("nom"),ob.getString("email"), ob.getString("rs"));
+                        List_data listData=new List_data(ob.getInt("id"),ob.getString("nom"),ob.getString("username"),ob.getString("email"),ob.getString("cin"),ob.getString("ville"), ob.getString("rs"),ob.getString("phone"),ob.getString("addresse"));
                         list_data.add(listData);
                     }
                     rv.setAdapter(adapter);
