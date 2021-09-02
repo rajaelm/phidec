@@ -33,7 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         List_data listData=list_data.get(position);
-        holder.txtname.setText(listData.getNom());
+        holder.txtname.setText(listData.getNom_client());
         holder.txtemail.setText(listData.getEmail());
         holder.txtrs.setText(listData.getRs());
     }

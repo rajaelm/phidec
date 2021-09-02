@@ -46,11 +46,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Username :"
+            android:text="Credit :"
             android:textSize="15dp"
             android:textColor="@color/gray"/>
         <EditText
-            android:id="@+id/Etusername"
+            android:id="@+id/EtCredit"
             android:layout_width="366dp"
             android:layout_height="46dp"
             android:layout_marginLeft="10dp"
@@ -64,12 +64,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CIN :"
+                android:text="Debit :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
 
             <EditText
-                android:id="@+id/EtCin"
+                android:id="@+id/EtDebit"
                 android:layout_width="366dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
@@ -105,12 +105,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Adresse :"
+                android:text="Nomp :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
 
             <EditText
-                android:id="@+id/EtAdress"
+                android:id="@+id/EtNomp"
                 android:layout_width="366dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
@@ -186,6 +186,27 @@
                 android:textColor="@color/black"
                 android:gravity="fill_vertical"
 
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Com :"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <EditText
+                android:id="@+id/EtCom"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
                 android:paddingLeft="20dp"
                 android:textSize="15dp"
                 app:layout_anchor="@+id/frameLayout"

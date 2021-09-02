@@ -23,7 +23,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Signup extends AppCompatActivity {
-    EditText editTextUsername, editTextEmail, editTextPassword,getEditTextTelephone,editTextname ;
+    private EditText editTextUsername, editTextEmail, editTextPassword,getEditTextTelephone,editTextname,EditTextVille,
+            EditTextAddresse,EditTextRs,EditTextCin;
 
 
 
@@ -45,8 +46,10 @@ public class Signup extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         getEditTextTelephone= findViewById(R.id.telephone);
-
-
+        EditTextVille = findViewById(R.id.editVille);
+        EditTextAddresse =findViewById(R.id.editAddresse);
+        EditTextRs = findViewById(R.id.editTextrs);
+        EditTextCin= findViewById(R.id.editTextcin);
         findViewById(R.id.buttonRegister).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +76,10 @@ public class Signup extends AppCompatActivity {
         final String email = editTextEmail.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
         final String tel = getEditTextTelephone.getText().toString().trim();
+        final String ville = EditTextVille.getText().toString().trim();
+        final String cin = EditTextCin.getText().toString().trim();
+        final String rs = EditTextRs.getText().toString().trim();
+        final String addresse = EditTextAddresse.getText().toString().trim();
 
 
         //first we will do the validations
@@ -132,7 +139,11 @@ public class Signup extends AppCompatActivity {
                                         userJson.getString("name"),
                                         userJson.getString("email"),
                                         userJson.getString("username"),
-                                        userJson.getString("phone")
+                                        userJson.getString("phone"),
+                                        userJson.getString("ville"),
+                                        userJson.getString("addresse"),
+                                        userJson.getString("cin"),
+                                        userJson.getString("rs")
                                 );
 
                                 //storing the user in shared preferences
@@ -163,6 +174,10 @@ public class Signup extends AppCompatActivity {
                 params.put("username", username);
                 params.put("password", password);
                 params.put("phone",tel);
+                params.put("ville",ville);
+                params.put("addresse",addresse);
+                params.put("cin",cin);
+                params.put("rs",rs);
                 return params;
             }
         };

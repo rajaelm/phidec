@@ -24,15 +24,7 @@
             android:src="@drawable/ic_baseline_arrow_back_24"
             android:gravity="start" />
 
-        <ImageButton
-            android:id="@+id/edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:paddingRight="28dp"
-            android:layout_gravity="top|right"
-            android:src="@drawable/ic_edit"
-            android:gravity="end" />
+
 
     </androidx.appcompat.widget.Toolbar>
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -54,6 +46,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:text="Matricule :"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/Etmatricule"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/search_box"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:ems="10"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
                 android:text="Nom :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
@@ -71,34 +82,16 @@
 
 
                 android:paddingLeft="20dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
-                android:text="Credit :"
-                android:textSize="15dp"
-                android:textColor="@color/gray"/>
-            <TextView
-                android:id="@+id/Etcredit"
-                android:layout_width="366dp"
-                android:layout_height="46dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="13dp"
-                android:background="@drawable/search_box"
-                android:textSize="15dp"
-                android:textColor="@color/black"
-                android:ems="10"
-                android:gravity="fill_vertical"
-                android:paddingLeft="20dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Debit :"
+                android:text="Modele :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
 
             <TextView
-                android:id="@+id/EtDebit"
+                android:id="@+id/EtModele"
                 android:layout_width="366dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
@@ -114,11 +107,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Raison Sociale :"
+                android:text="Conducteur :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
             <TextView
-                android:id="@+id/EtRs"
+                android:id="@+id/EtConducteur"
                 android:layout_width="366dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
@@ -134,12 +127,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nomp :"
+                android:text="Cg :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
 
             <TextView
-                android:id="@+id/EtNomp"
+                android:id="@+id/EtCg"
                 android:layout_width="366dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
@@ -155,12 +148,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email :"
+                android:text="Dateexp :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
 
             <TextView
-                android:id="@+id/Etemail"
+                android:id="@+id/Etdateexp"
                 android:layout_width="366dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
@@ -171,19 +164,19 @@
                 android:ems="10"
                 android:gravity="fill_vertical"
 
-                android:inputType="textEmailAddress"
+                android:inputType="date"
                 android:paddingLeft="20dp"
                 app:layout_anchor="@+id/frameLayout"
                 app:layout_anchorGravity="center" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Numéro de téléphone :"
+                android:text="Numéro de permis :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
 
             <TextView
-                android:id="@+id/EtTelephone"
+                android:id="@+id/Etnpermis"
                 android:layout_width="366dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
@@ -192,30 +185,8 @@
                 android:ems="10"
                 android:textColor="@color/black"
                 android:gravity="fill_vertical"
-                android:inputType="phone"
+                android:inputType="date"
 
-                android:paddingLeft="20dp"
-                android:textSize="15dp"
-                app:layout_anchor="@+id/frameLayout"
-                app:layout_anchorGravity="center" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ville :"
-                android:textSize="15dp"
-                android:textColor="@color/gray"/>
-
-            <TextView
-                android:id="@+id/EtVille"
-                android:layout_width="366dp"
-                android:layout_height="46dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/search_box"
-                android:ems="10"
-                android:textColor="@color/black"
-                android:gravity="fill_vertical"
-                android:inputType="phone"
                 android:paddingLeft="20dp"
                 android:textSize="15dp"
                 app:layout_anchor="@+id/frameLayout"
@@ -223,12 +194,34 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Com :"
+                android:text="Dateexpp :"
                 android:textSize="15dp"
                 android:textColor="@color/gray"/>
 
             <TextView
-                android:id="@+id/EtCom"
+                android:id="@+id/Etdateexpp"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
+                android:inputType="date"
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cin:"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <TextView
+                android:id="@+id/EtCin"
                 android:layout_width="366dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
@@ -241,6 +234,93 @@
                 android:textSize="15dp"
                 app:layout_anchor="@+id/frameLayout"
                 app:layout_anchorGravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Datevcin:"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <TextView
+                android:id="@+id/Etdatevcin"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:inputType="date"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carburant:"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <TextView
+                android:id="@+id/EtCarburant"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assurance:"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <TextView
+                android:id="@+id/EtAssurance"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nchassi:"
+                android:textSize="15dp"
+                android:textColor="@color/gray"/>
+
+            <TextView
+                android:id="@+id/Etnchassi"
+                android:layout_width="366dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/search_box"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:textSize="15dp"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="center" />
+
 
 
         </LinearLayout>
@@ -264,7 +344,7 @@
             android:contentDescription="submit"
             android:src="@drawable/ic_garbage"
             android:layout_gravity="right|bottom"
-           />
+            />
 
 
     </LinearLayout>

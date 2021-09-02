@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,83 +21,92 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ViewClient extends AppCompatActivity {
+public class ViewCar extends AppCompatActivity {
 
     private int position;
-    private TextView Etname,Etnomp,EtCredit,EtRs,EtDebit,Etemail,EtTelephone,EtVille,EtCom;
+    private TextView Etname,Etmatricule,EtModele,EtConducteur,EtCg,Etdateexp,Etnpermis,Etdateexpp,EtCin,Etdatevcin,EtCarburant,EtAssurance,Etnchassi;
     private String id;
     private ImageButton editButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_client);
+        setContentView(R.layout.activity_view_car);
 
         Intent intent =getIntent();
         position = intent.getExtras().getInt("position");
-
+        Etmatricule = findViewById(R.id.Etmatricule);
         Etname = findViewById(R.id.Etname);
-        Etnomp = findViewById(R.id.EtNomp);
-        EtCredit = findViewById(R.id.Etcredit);
-        EtRs = findViewById(R.id.EtRs);
-        EtDebit = findViewById(R.id.EtDebit);
-        Etemail = findViewById(R.id.Etemail);
-        EtTelephone = findViewById(R.id.EtTelephone);
-        EtVille = findViewById(R.id.EtVille);
-        EtCom =findViewById(R.id.EtCom);
+
+        EtModele = findViewById(R.id.EtModele);
+        EtConducteur = findViewById(R.id.EtConducteur);
+        EtCg = findViewById(R.id.EtCg);
+        Etdateexp = findViewById(R.id.Etdateexp);
+        Etnpermis = findViewById(R.id.Etnpermis);
+        Etdateexpp = findViewById(R.id.Etdateexpp);
+        EtCin =findViewById(R.id.EtCin);
+        Etdatevcin =findViewById(R.id.Etdatevcin);
+        EtCarburant =findViewById(R.id.EtCarburant);
+        EtAssurance =findViewById(R.id.EtAssurance);
+        Etnchassi =findViewById(R.id.Etnchassi);
 
 
-        id = String.valueOf((SecondActivity.list_data.get(position).getId()));
-        Etname.setText(SecondActivity.list_data.get(position).getNom_client());
-        Etnomp.setText(SecondActivity.list_data.get(position).getNomp());
-        EtCredit.setText(SecondActivity.list_data.get(position).getCredit());
-        EtRs.setText(SecondActivity.list_data.get(position).getRs());
-        EtDebit.setText(SecondActivity.list_data.get(position).getDebit());
-        Etemail.setText(SecondActivity.list_data.get(position).getEmail());
-        EtTelephone.setText(SecondActivity.list_data.get(position).getPhone());
-        EtVille.setText(SecondActivity.list_data.get(position).getVille());
-        EtCom.setText(SecondActivity.list_data.get(position).getCom());
+        id = String.valueOf((FirstActivity.list_car.get(position).getId()));
+        Etname.setText(FirstActivity.list_car.get(position).getNom());
+        Etmatricule.setText(FirstActivity.list_car.get(position).getMatricule());
+        EtModele.setText(FirstActivity.list_car.get(position).getModele());
+        EtConducteur.setText(FirstActivity.list_car.get(position).getConducteur());
+        EtCg.setText(FirstActivity.list_car.get(position).getCg());
+        Etdateexp.setText(FirstActivity.list_car.get(position).getDateexp());
+        Etnpermis.setText(FirstActivity.list_car.get(position).getNpermis());
+        Etdateexpp.setText(FirstActivity.list_car.get(position).getGetDateexpp());
+        EtCin.setText(FirstActivity.list_car.get(position).getCin());
+        Etdatevcin.setText(FirstActivity.list_car.get(position).getDatevcin());
+        EtCarburant.setText(FirstActivity.list_car.get(position).getCarburant());
+        EtAssurance.setText(FirstActivity.list_car.get(position).getAssurance());
+        Etnchassi.setText(FirstActivity.list_car.get(position).getNchassi());
+
         editButton = (ImageButton) findViewById(R.id.edit);
-        editButton.setOnClickListener(new View.OnClickListener() {
+       /* editButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent intent = new Intent(ViewClient.this, EditClient.class);
+                Intent intent = new Intent(ViewCar.this, EditClient.class);
                 Bundle data = new Bundle();
                 data.putInt("position",position);
                 intent.putExtras(data);
                 startActivity(intent);
 
 //                intent.putExtra("position",position);
-     //           startActivity(intent); // startActivity allow you to move
+                //           startActivity(intent); // startActivity allow you to move
             }
         });
-
+*/
         FloatingActionButton deleteButton = findViewById(R.id.deleteButton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                deleteData(String.valueOf(SecondActivity.list_data.get(position).getId()));
+                deleteData(String.valueOf(FirstActivity.list_car.get(position).getId()));
             }
         });
 
-}
+    }
     private void deleteData(final String id) {
 
-        StringRequest request = new StringRequest(Request.Method.POST, URLs.DELETE_Client,
+        StringRequest request = new StringRequest(Request.Method.POST, URLs.DELETE_Car,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
                         if(response.equalsIgnoreCase("Deleted")){
-                            Toast.makeText(ViewClient.this, "Utilisateur supprimé", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(ViewClient.this,
+                            Toast.makeText(ViewCar.this, "Voiture supprimée", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(ViewCar.this,
                                     SecondActivity.class);
                             startActivity(intent); // startActivity allow you to move
                         }
                         else  if(response.equalsIgnoreCase("Failed")){
-                            Toast.makeText(ViewClient.this, "Utilisateur non supprimé essayez à nouveau", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ViewCar.this, "Voiture non supprimé essayez à nouveau", Toast.LENGTH_SHORT).show();
                         }
 
 
@@ -106,7 +114,7 @@ public class ViewClient extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ViewClient.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewCar.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
@@ -123,5 +131,4 @@ public class ViewClient extends AppCompatActivity {
 
 
     }
-
 }

@@ -43,13 +43,17 @@
         android:layout_below="@id/toolbar2"
         android:background="@drawable/profile"
         android:layout_centerHorizontal="true"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profilePic"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp">
     <LinearLayout
         android:id="@+id/frameLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/profilePic"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
+
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <TextView
@@ -140,9 +144,69 @@
             android:textSize="15dp"
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Raison Sociale :"
+            android:textSize="15dp"
+            android:textColor="@color/gray"/>
+        <TextView
+            android:id="@+id/Etrs"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:ems="10"
+            android:gravity="fill_vertical"
+            android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Addresse :"
+            android:textSize="15dp"
+            android:textColor="@color/gray"/>
+        <TextView
+            android:id="@+id/Etaddresse"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:ems="10"
+            android:gravity="fill_vertical"
+            android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="CIN :"
+            android:textSize="15dp"
+            android:textColor="@color/gray"/>
+        <TextView
+            android:id="@+id/EtCin"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:ems="10"
+            android:gravity="fill_vertical"
+
+
+            android:paddingLeft="20dp" />
 
 
     </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"

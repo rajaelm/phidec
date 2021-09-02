@@ -2,96 +2,111 @@ package com.example.phidecapp;
 
 public class List_data {
     private int id;
-    private String nom;
-    private String username;
-    private String email;
-    private String cin;
-    private String ville;
-    private String rs;
-    private String phone;
-    private String addresse;
 
-    public List_data(int id, String nom, String username, String email, String cin, String ville, String rs, String phone, String addresse) {
-        this.id= id;
-        this.nom = nom;
-        this.username = username;
-        this.email = email;
-        this.cin = cin;
+    private String nomp;
+    private String credit;
+    private String debit;
+    private String nom_client;
+    private String ville;
+    private String phone;
+    private String email;
+    private String rs;
+    private String com;
+
+    public List_data(int id, String nomp, String credit, String debit, String nom_client, String ville, String phone, String email, String rs, String com) {
+        this.id = id;
+
+        this.nomp = nomp;
+        this.credit = credit;
+        this.debit = debit;
+        this.nom_client = nom_client;
         this.ville = ville;
-        this.rs = rs;
         this.phone = phone;
-        this.addresse = addresse;
+        this.email = email;
+        this.rs = rs;
+        this.com = com;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getNom() {
-        return nom;
+
+
+    public String getNomp() {
+        return nomp;
     }
 
-    public String getUsername() {
-        return username;
+    public String getCredit() {
+        return credit;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDebit() {
+        return debit;
     }
 
-    public String getCin() {
-        return cin;
+    public String getNom_client() {
+        return nom_client;
     }
 
     public String getVille() {
         return ville;
     }
 
-    public String getRs() {
-        return rs;
-    }
-
     public String getPhone() {
         return phone;
     }
 
-    public String getAddresse() {
-        return addresse;
+    public String getEmail() {
+        return email;
+    }
+
+    public String getRs() {
+        return rs;
+    }
+
+    public String getCom() {
+        return com;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+
+    public void setNomp(String nomp) {
+        this.nomp = nomp;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setCredit(String credit) {
+        this.credit = credit;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDebit(String debit) {
+        this.debit = debit;
     }
 
-    public void setCin(String cin) {
-        this.cin = cin;
+    public void setNom_client(String nom_client) {
+        this.nom_client = nom_client;
     }
 
     public void setVille(String ville) {
         this.ville = ville;
     }
 
-    public void setRs(String rs) {
-        this.rs = rs;
-    }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public void setAddresse(String addresse) {
-        this.addresse = addresse;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setRs(String rs) {
+        this.rs = rs;
+    }
+
+    public void setCom(String com) {
+        this.com = com;
     }
 }

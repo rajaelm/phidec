@@ -105,7 +105,7 @@ public class SecondActivity  extends Home {
                     JSONArray array=jsonObject.getJSONArray("data");
                     for (int i=0; i<array.length(); i++ ){
                         JSONObject ob =array.getJSONObject(i);
-                        List_data listData=new List_data(ob.getInt("id"),ob.getString("nom"),ob.getString("username"),ob.getString("email"),ob.getString("cin"),ob.getString("ville"), ob.getString("rs"),ob.getString("phone"),ob.getString("addresse"));
+                        List_data listData=new List_data(ob.getInt("id"),ob.getString("nomp"),ob.getString("credit"),ob.getString("credit"),ob.getString("nom_client"),ob.getString("ville"),ob.getString("phone"),ob.getString("email"),ob.getString("rc"),ob.getString("com"));
                         list_data.add(listData);
                     }
                     rv.setAdapter(adapter);
@@ -128,7 +128,7 @@ public class SecondActivity  extends Home {
         ArrayList<List_data> filteredList = new ArrayList<>();
 
         for (List_data client : list_data) {
-            if (client.getNom().toLowerCase().contains(text.toLowerCase())) {
+            if (client.getNom_client().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(client);
             }
         }

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingEnd="16dp"
+            android:paddingStart="6dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_baseline_close_24" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <EditText
+            android:id="@+id/Etmatricule"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Matricule"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/Etname"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Nom"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp" />
+        <EditText
+            android:id="@+id/Etmodele"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Modele"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp" />
+        <EditText
+            android:id="@+id/Etconducteur"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Conducteur"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"/>
+        <EditText
+            android:id="@+id/Etcg"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Cg"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"/>
+        <EditText
+            android:id="@+id/dateexp"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="Dateexp"
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/Etnpermis"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="N permis"
+
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/dateexpp"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="dateeexp"
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/Etcin"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="CIN"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"/>
+        <EditText
+            android:id="@+id/Etdatevcin"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Datevcin"
+            android:inputType="date"
+            android:paddingLeft="20dp"/>
+        <EditText
+            android:id="@+id/Etcarburant"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Carburant"
+
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/assurance"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Assurance"
+
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/Etnchassi"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Nchassi"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+</ScrollView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center">
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Ajoute la voiture"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+
+            />
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class EditClient extends AppCompatActivity {
     private int position;
-    private EditText Etname,Etusername,EtCin,EtRs,EtAdress,Etemail,EtTelephone,EtVille;
+    private EditText Etname,EtCredit,EtDebit,EtRs,Etnomp,Etemail,EtTelephone,EtVille,EtCom;
     private int idInt;
 
     @Override
@@ -42,35 +42,38 @@ public class EditClient extends AppCompatActivity {
         }
 
         Etname = findViewById(R.id.Etname);
-        Etusername = findViewById(R.id.Etusername);
-        EtCin = findViewById(R.id.EtCin);
+        EtCredit = findViewById(R.id.EtCredit);
+        EtDebit = findViewById(R.id.EtDebit);
         EtRs = findViewById(R.id.EtRs);
-        EtAdress = findViewById(R.id.EtAdress);
+        Etnomp = findViewById(R.id.EtNomp);
         Etemail = findViewById(R.id.Etemail);
         EtTelephone = findViewById(R.id.EtTelephone);
         EtVille = findViewById(R.id.EtVille);
+        EtCom = findViewById(R.id.EtCom);
 
         idInt = (SecondActivity.list_data.get(position).getId());
-        Etname.setText(SecondActivity.list_data.get(position).getNom());
-        Etusername.setText(SecondActivity.list_data.get(position).getUsername());
-        EtCin.setText(SecondActivity.list_data.get(position).getCin());
+        Etname.setText(SecondActivity.list_data.get(position).getNom_client());
+        EtCredit.setText(SecondActivity.list_data.get(position).getCredit());
+        EtDebit.setText(SecondActivity.list_data.get(position).getDebit());
         EtRs.setText(SecondActivity.list_data.get(position).getRs());
-        EtAdress.setText(SecondActivity.list_data.get(position).getAddresse());
+        Etnomp.setText(SecondActivity.list_data.get(position).getNomp());
         Etemail.setText(SecondActivity.list_data.get(position).getEmail());
         EtTelephone.setText(SecondActivity.list_data.get(position).getPhone());
         EtVille.setText(SecondActivity.list_data.get(position).getVille());
+        EtCom.setText(SecondActivity.list_data.get(position).getCom());
 
     }
     public void btn_updateData(View view) {
 
         final String name = Etname.getText().toString();
-        final String username = Etusername.getText().toString();
+        final String credit = EtCredit.getText().toString();
         final String email = Etemail.getText().toString();
-        final String cin = EtCin.getText().toString();
-        final String address = EtAdress.getText().toString();
+        final String debit = EtDebit.getText().toString();
+        final String nomp = Etnomp.getText().toString();
         final String phone = EtTelephone.getText().toString();
         final String ville = EtVille.getText().toString();
         final String rs = EtRs.getText().toString();
+        final String com = EtCom.getText().toString();
         final String id = String.valueOf(idInt);
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -104,13 +107,14 @@ public class EditClient extends AppCompatActivity {
 
                 params.put("id",id);
                 params.put("name",name);
-                params.put("username",username);
-                params.put("cin",cin);
+                params.put("credit",credit);
+                params.put("debit",debit);
                 params.put("email",email);
                 params.put("rs",rs);
                 params.put("phone",phone);
-                params.put("addresse",address);
+                params.put("nomp",nomp);
                 params.put("ville",ville);
+                params.put("com",com);
 
                 return params;
             }

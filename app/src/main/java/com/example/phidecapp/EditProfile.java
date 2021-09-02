@@ -37,6 +37,7 @@ public class EditProfile extends AppCompatActivity {
         user = sharedPrefManager.getUser();
         etName = (EditText) findViewById(R.id.Etname);
         etName.setText(user.getName());
+
         etEmail = (EditText) findViewById(R.id.Etemail);
         etEmail.setText(user.getEmail());
 
