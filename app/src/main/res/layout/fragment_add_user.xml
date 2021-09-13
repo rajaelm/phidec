@@ -37,8 +37,54 @@
             android:background="@drawable/search_box"
             android:ems="10"
             android:hint="Nom"
-            android:inputType="textEmailAddress"
+
             android:paddingLeft="20dp" />
+        <EditText
+            android:id="@+id/Etcredit"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Credit"
+
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/EtDebit"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Debit"
+
+            android:paddingLeft="20dp" />
+        <EditText
+            android:id="@+id/EtRs"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Raison sociale"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"/>
+        <EditText
+            android:id="@+id/EtNomp"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:hint="Nomp"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"/>
         <EditText
             android:id="@+id/Etemail"
             android:layout_width="366dp"
@@ -53,52 +99,7 @@
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />
         <EditText
-            android:id="@+id/Etusername"
-            android:layout_width="366dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="13dp"
-            android:background="@drawable/search_box"
-            android:ems="10"
-            android:hint="Username"
-            android:inputType="textEmailAddress"
-            android:paddingLeft="20dp" />
-        <EditText
-            android:id="@+id/Etcin"
-            android:layout_width="366dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/search_box"
-            android:ems="10"
-            android:hint="CIN"
-            android:inputType="textPersonName"
-            android:paddingLeft="20dp"/>
-        <EditText
-            android:id="@+id/Etrs"
-            android:layout_width="366dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/search_box"
-            android:ems="10"
-            android:hint="Raison Sociale"
-            android:inputType="textPersonName"
-            android:paddingLeft="20dp"/>
-        <EditText
-            android:id="@+id/ville"
-            android:layout_width="366dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/search_box"
-            android:ems="10"
-            android:hint="Ville"
-            android:paddingLeft="20dp"
-            app:layout_anchor="@+id/frameLayout"
-            app:layout_anchorGravity="center" />
-        <EditText
-            android:id="@+id/Etphone"
+            android:id="@+id/EtTelephone"
             android:layout_width="366dp"
             android:layout_height="46dp"
             android:layout_marginLeft="10dp"
@@ -111,27 +112,27 @@
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/EtVille"
             android:layout_width="366dp"
             android:layout_height="46dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/search_box"
             android:ems="10"
-            android:hint="password"
-            android:inputType="textPassword"
+            android:hint="Ville"
+
             android:paddingLeft="20dp"
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />
         <EditText
-            android:id="@+id/Etaddresse"
+            android:id="@+id/EtCom"
             android:layout_width="366dp"
             android:layout_height="46dp"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/search_box"
             android:ems="10"
-            android:hint="Addresse"
+            android:hint="Com"
             android:inputType="textPersonName"
             android:paddingLeft="20dp"/>
     </LinearLayout>

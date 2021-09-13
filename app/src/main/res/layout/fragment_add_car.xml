@@ -95,7 +95,6 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/search_box"
             android:ems="10"
-            android:inputType="date"
             android:hint="Dateexp"
             android:paddingLeft="20dp"
             app:layout_anchor="@+id/frameLayout"
@@ -121,7 +120,7 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/search_box"
             android:ems="10"
-            android:inputType="date"
+
             android:hint="dateeexp"
             android:paddingLeft="20dp"
             app:layout_anchor="@+id/frameLayout"
@@ -146,7 +145,7 @@
             android:background="@drawable/search_box"
             android:ems="10"
             android:hint="Datevcin"
-            android:inputType="date"
+
             android:paddingLeft="20dp"/>
         <EditText
             android:id="@+id/Etcarburant"

@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class EditProfile extends AppCompatActivity {
     private User user;
-    EditText etName,etEmail,Etusername,Ettelephoen;
+    EditText etName,etEmail,Etusername,Etrs,Ettelephoen,Etaddresse,Etville,Etcin;
     Button editprof;
     ImageButton back;
     @Override
@@ -44,8 +44,20 @@ public class EditProfile extends AppCompatActivity {
         Etusername = (EditText) findViewById(R.id.Etusername);
         Etusername.setText(user.getUsername());
 
+        Etrs = (EditText) findViewById(R.id.Etrs);
+        Etrs.setText(user.getRs());
+
         Ettelephoen = (EditText) findViewById(R.id.telephone);
         Ettelephoen.setText(user.getTelephone());
+
+        Etaddresse = (EditText) findViewById(R.id.Etaddresse);
+        Etaddresse.setText(user.getAddresse());
+
+        Etville = (EditText) findViewById(R.id.Etville);
+        Etville.setText(user.getVille());
+
+        Etcin = (EditText) findViewById(R.id.Etcin);
+        Etcin.setText(user.getCin());
 
         editprof=(Button)findViewById(R.id.savemodifs);
         editprof.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +88,11 @@ public class EditProfile extends AppCompatActivity {
         final String email = etEmail.getText().toString().trim();
         final String username = Etusername.getText().toString().trim();
         final String tel = Ettelephoen.getText().toString().trim();
+
+        final String rs = Etrs.getText().toString().trim();
+        final String addresse = Etaddresse.getText().toString().trim();
+        final String ville = Etville.getText().toString().trim();
+        final String cin = Etcin.getText().toString().trim();
         final String id = String.valueOf(user.getId());
 
 
@@ -123,6 +140,11 @@ public class EditProfile extends AppCompatActivity {
                 params.put("email", email);
                 params.put("username", username);
                 params.put("telephone", tel);
+                params.put("rs", rs);
+                params.put("addresse", addresse);
+                params.put("ville", ville);
+                params.put("cin", cin);
+
                 return params;
             }
         };

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -25,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -35,7 +37,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -58,7 +63,7 @@ public class AddCar extends DialogFragment {
 
 
     public static final String TAG = "example_dialog";
-
+    Calendar myCalendar = Calendar.getInstance();
     private Toolbar toolbar;
 
     public static AddCar display(FragmentManager fragmentManager) {
@@ -102,7 +107,7 @@ public class AddCar extends DialogFragment {
         Etmodele =view.findViewById(R.id.Etmodele);
         Etconducteur=view.findViewById(R.id.Etconducteur);
         Etcg=view.findViewById(R.id.Etcg);
-        etdateexp=view.findViewById(R.id.dateexp);
+        //etdateexp=view.findViewById(R.id.dateexp);
         Etnpermis=view.findViewById(R.id.Etnpermis);
         etdateexpp=view.findViewById(R.id.dateexpp);
         Etcin=view.findViewById(R.id.Etcin);
@@ -110,7 +115,81 @@ public class AddCar extends DialogFragment {
         Etcarburant=view.findViewById(R.id.Etcarburant);
         etassurance=view.findViewById(R.id.assurance);
         Etnchassi=view.findViewById(R.id.Etnchassi);
+        /////////////////////////////////////////////////////////
 
+
+        etdateexp=view.findViewById(R.id.dateexp);
+        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+            }
+
+        };
+        DatePickerDialog.OnDateSetListener date1 = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel1();
+            }
+
+        };
+        DatePickerDialog.OnDateSetListener date2 = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel2();
+            }
+
+        };
+        etdateexp.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(getActivity(), date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
+            }
+        });
+        etdateexpp.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(getActivity(), date1, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        Etdatevcin.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(getActivity(), date2, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        //////////////////////////////////
         submit= view.findViewById(R.id.submit);
         // Creating Volley newRequestQueue .
         requestQueue = Volley.newRequestQueue(mContext);
@@ -219,6 +298,24 @@ public class AddCar extends DialogFragment {
         carburant= Etcarburant.getText().toString().trim();
         assurance= etassurance.getText().toString().trim();
         nchassi= Etnchassi.getText().toString().trim();
+
+    }
+    private void updateLabel() {
+        String myFormat = "yyyy-MM-dd"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        etdateexp.setText(sdf.format(myCalendar.getTime()));
+
+    }
+    private void updateLabel1() {
+        String myFormat = "yyyy-MM-dd"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        etdateexpp.setText(sdf.format(myCalendar.getTime()));
+
+    }
+    private void updateLabel2() {
+        String myFormat = "yyyy-MM-dd"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        Etdatevcin.setText(sdf.format(myCalendar.getTime()));
 
     }
 

@@ -105,7 +105,6 @@
             android:textColor="@color/gray"
             android:background="@drawable/search_box"
             android:ems="10"
-
             android:inputType="textPersonName"
             android:paddingLeft="20dp"/>
         <EditText
@@ -116,8 +115,52 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/search_box"
             android:ems="10"
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/Etrs"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
 
-            android:inputType="textEmailAddress"
+
+        <EditText
+            android:id="@+id/Etaddresse"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/Etcin"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:paddingLeft="20dp"
+            app:layout_anchor="@+id/frameLayout"
+            app:layout_anchorGravity="center" />
+        <EditText
+            android:id="@+id/Etville"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/search_box"
+            android:ems="10"
             android:paddingLeft="20dp"
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />

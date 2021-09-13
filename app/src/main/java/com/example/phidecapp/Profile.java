@@ -12,7 +12,7 @@ import android.widget.Toast;
 import android.preference.PreferenceManager;
 
 public class Profile extends AppCompatActivity {
-    private TextView etName, etEmail,etUsername, ettelephone,etrs,etaddresse,etcin;
+    private TextView etName, etEmail,etUsername, ettelephone,etrs,etaddresse,etcin,etVille;
     private User user;
     ImageButton back;
     Button edit;
@@ -36,7 +36,7 @@ public class Profile extends AppCompatActivity {
         ettelephone = (TextView) findViewById(R.id.EtTelephone);
         ettelephone.setText(user.getTelephone());
 
-        etrs= (TextView) findViewById(R.id.EtRs);
+        etrs= (TextView) findViewById(R.id.Etrs);
         etrs.setText(user.getRs());
 
         etaddresse= (TextView) findViewById(R.id.Etaddresse);
@@ -44,6 +44,10 @@ public class Profile extends AppCompatActivity {
 
         etcin= (TextView) findViewById(R.id.EtCin);
         etcin.setText(user.getCin());
+
+        etVille= (TextView) findViewById(R.id.EtVille);
+        etVille.setText(user.getVille());
+
         edit= (Button)findViewById(R.id.Editprof);
         back = (ImageButton) findViewById(R.id.back);
 

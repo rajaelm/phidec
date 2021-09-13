@@ -203,6 +203,27 @@
 
 
             android:paddingLeft="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Ville :"
+            android:textSize="15dp"
+            android:textColor="@color/gray"/>
+        <TextView
+            android:id="@+id/EtVille"
+            android:layout_width="366dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/search_box"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:ems="10"
+            android:gravity="fill_vertical"
+
+
+            android:paddingLeft="20dp" />
 
 
     </LinearLayout>

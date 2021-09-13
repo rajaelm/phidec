@@ -39,6 +39,7 @@ public class SharedPrefManager  {
         editor.putString(KEY_Ville, user.getVille());
         editor.putString(KEY_Cin, user.getCin());
         editor.putString(KEY_Addresse, user.getAddresse());
+        editor.putString(KEY_RS, user.getRs());
         editor.apply();
     }
 
