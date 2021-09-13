@@ -42,8 +42,8 @@ import java.util.Map;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class Add_user extends DialogFragment {
-    EditText etName, etemail, etrs,etusername,etville,etphone,etcin,etpassword,etaddresse;
+public class Add_client extends DialogFragment {
+    EditText etName, etemail,Etnomp, etrs,EtDebit,etville,etphone,EtCredit,etcom;
     Menu menu;
     Button submit;
     private Context mContext;
@@ -51,7 +51,7 @@ public class Add_user extends DialogFragment {
     RequestQueue requestQueue;
 
     // Create string variable to hold the EditText Value.
-    String Name,Email,Rs,Username,Cin,Ville,Addresse,Phone,password;
+    String Name,Email,Rs,nomp,Ville,credit,Phone,debit,com;
 
     // Creating Progress dialog.
     ProgressDialog progressDialog;
@@ -61,8 +61,8 @@ public class Add_user extends DialogFragment {
 
     private Toolbar toolbar;
 
-    public static Add_user display(FragmentManager fragmentManager) {
-        Add_user exampleDialog = new Add_user();
+    public static Add_client display(FragmentManager fragmentManager) {
+        Add_client exampleDialog = new Add_client();
         exampleDialog.show(fragmentManager, TAG);
         return exampleDialog;
     }
@@ -94,18 +94,19 @@ public class Add_user extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_add_user, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_client, container, false);
 
         toolbar = view.findViewById(R.id.toolbar);
         etName = view.findViewById(R.id.Etname);
         etemail =view.findViewById(R.id.Etemail);
-        etrs =view.findViewById(R.id.Etrs);
-        etusername=view.findViewById(R.id.Etusername);
-        etville=view.findViewById(R.id.ville);
-        etphone=view.findViewById(R.id.Etphone);
-        etpassword=view.findViewById(R.id.password);
-        etcin=view.findViewById(R.id.Etcin);
-        etaddresse=view.findViewById(R.id.Etaddresse);
+        Etnomp = view.findViewById(R.id.EtNomp);
+        etrs =view.findViewById(R.id.EtRs);
+        EtDebit=view.findViewById(R.id.EtDebit);
+        EtCredit=view.findViewById(R.id.Etcredit);
+        etville=view.findViewById(R.id.EtVille);
+        etphone=view.findViewById(R.id.EtTelephone);
+        etcom=view.findViewById(R.id.EtCom);
+
 
 
         submit= view.findViewById(R.id.submit);
@@ -125,7 +126,7 @@ public class Add_user extends DialogFragment {
                 GetValueFromEditText();
 
                 // Creating string request with post method.
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.ADD_Client,
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.ADD_sub,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String ServerResponse) {
@@ -146,7 +147,6 @@ public class Add_user extends DialogFragment {
 
                                 // Hiding the progress dialog after all task complete.
                                 progressDialog.dismiss();
-
                                 // Showing error message if something goes wrong.
                                 Toast.makeText(mContext, volleyError.toString(), Toast.LENGTH_LONG).show();
                             }
@@ -158,14 +158,14 @@ public class Add_user extends DialogFragment {
                         Map<String, String> params = new HashMap<String, String>();
 
                         // Adding All values to Params.
-                        params.put("name", Name);
+                        params.put("nom_client", Name);
                         params.put("email", Email);
-                        params.put("username", Username);
+                        params.put("nomp", nomp);
                         params.put("rs", Rs);
-                        params.put("password",password);
+                        params.put("credit",credit);
                         params.put("ville", Ville);
-                        params.put("addresse", Addresse);
-                        params.put("cin", Cin);
+                        params.put("debit", debit);
+                        params.put("com", com);
                         params.put("phone", Phone);
                         return params;
                     }
@@ -189,8 +189,8 @@ public class Add_user extends DialogFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         toolbar.setNavigationOnClickListener(v -> dismiss());
-        toolbar.setTitle("Ajouter un sous admin");
-       // toolbar.inflateMenu(R.menu.add_user_menu);
+        toolbar.setTitle("Ajouter un client");
+
         toolbar.setOnMenuItemClickListener(item -> {
             dismiss();
             return true;
@@ -200,11 +200,11 @@ public class Add_user extends DialogFragment {
         Name = etName.getText().toString().trim();
         Email = etemail.getText().toString().trim();
         Rs = etrs.getText().toString().trim();
-        Username=etusername.getText().toString().trim();
-        password=etpassword.getText().toString().trim();
+        nomp=Etnomp.getText().toString().trim();
+        credit=EtCredit.getText().toString().trim();
         Ville=etville.getText().toString().trim();
-        Addresse=etaddresse.getText().toString().trim();
-        Cin=etcin.getText().toString().trim();
+        debit=EtDebit.getText().toString().trim();
+        com=etcom.getText().toString().trim();
         Phone= etphone.getText().toString().trim();
     }
 }
