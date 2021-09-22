@@ -250,7 +250,6 @@ public class AddCar extends DialogFragment {
                         params.put("npermis", npermis);
                         params.put("dateexpp", dateexpp);
                         params.put("cin", cin);
-
                         params.put("datevcin", datevcin);
                         params.put("carburant", carburant);
                         params.put("assurance", assurance);

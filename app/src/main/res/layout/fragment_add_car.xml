@@ -121,7 +121,7 @@
             android:background="@drawable/search_box"
             android:ems="10"
 
-            android:hint="dateeexp"
+            android:hint="dateexpp"
             android:paddingLeft="20dp"
             app:layout_anchor="@+id/frameLayout"
             app:layout_anchorGravity="center" />
